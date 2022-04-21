@@ -19,7 +19,7 @@ struct HomeScreen: View {
             TabView {
                 ForEach(Array(zip(pets.indices, pets)), id: \.0) { index, pet in
                     VStack {
-                        Text(pet.name!)
+                        Text(pet.name ?? "ERROR")
                         //NavigationLink(destination: PillsAdd(pet: pet)) {
                         //    Text("PILLS")
                         // }

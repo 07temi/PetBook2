@@ -13,7 +13,7 @@
         <relationship name="toHealth" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Health" inverseName="toPets" inverseEntity="Health"/>
     </entity>
     <elements>
-        <element name="Pets" positionX="-235.358154296875" positionY="-23.67391967773438" width="128" height="118"/>
         <element name="Health" positionX="-54" positionY="9" width="128" height="88"/>
+        <element name="Pets" positionX="-235.358154296875" positionY="-23.67391967773438" width="128" height="104"/>
     </elements>
 </model>

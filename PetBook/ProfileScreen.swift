@@ -19,7 +19,9 @@ struct ProfileScreen: View {
             //                .cornerRadius(25)
             Text("\(pet.type!)")
             Text("\(pet.name!)")
-            
+//*******************************************************************
+            Text("\(pet.toHealth?.doc ?? "no data")")
+//*******************************************************************
         }
         .toolbar {
             ToolbarItem(placement: .principal) {

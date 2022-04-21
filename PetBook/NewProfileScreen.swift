@@ -11,6 +11,7 @@ struct NewProfileScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var name = ""
     @State private var type = ""
+    @State private var doc = ""
     private let types = ["Dog", "Cat"]
     
     var body: some View {
@@ -23,7 +24,10 @@ struct NewProfileScreen: View {
                         Text(type)
                     }
                 }
+                TextField("Enter doc", text: $doc)
+                    .disableAutocorrection(true)
             }
+
         }
         .toolbar {
             Button("Save", action: {addItem()} )
@@ -34,7 +38,7 @@ struct NewProfileScreen: View {
         let newItem = Pets(context: viewContext)
         newItem.name = name
         newItem.type = type
-//        newItem.linkToInfo?.setValue("test_pills", forKey: "pills")
+        newItem.toHealth?.setValue(doc, forKey: "doc")
         newItem.picture = "james"
         
         do {
