@@ -13,13 +13,13 @@ struct ProfileScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     var body: some View {
         VStack {
-            //            Image(pet.picture ?? "star.fill")
-            //                .resizable()
-            //                .scaledToFill()
-            //                .frame(width: 50, height: 50)
-            //                .cornerRadius(25)
             Text("\(pet.type!)")
-            Text("\(pet.name!)")
+            //Здесь ссылки на основные функции
+            // Переход на экран 1
+            //  -- Визит к доктору
+            // Переход на экран 2
+            // Переход на экран 3
+            // Переход на экран 4
             if (pet.toHealth != nil){
                 Text("\(pet.toHealth!.doc ?? "no data")")
             }
@@ -28,14 +28,19 @@ struct ProfileScreen: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                Image(pet.picture ?? "star.fill")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 50, height: 50)
-                    .cornerRadius(25)
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack{
+                    Image(pet.picture ?? "star.fill")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 44, height: 44)
+                        .cornerRadius(22)
+                    Text("\(pet.name ?? "no name")")
+                        .font(.largeTitle)
+                }
             }
         }
+        
         .navigationBarBackButtonHidden(true)
         Spacer()
         Button("Save") {
@@ -43,6 +48,7 @@ struct ProfileScreen: View {
         }
         .padding()
     }
+    
     private func saveNotes(){
         let newNote = Health(context: viewContext)
         newNote.id = UUID()
