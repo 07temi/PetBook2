@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileScreen: View {
     let pet: Pets
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.managedObjectContext) private var viewContext
     var body: some View {
         VStack {
             //            Image(pet.picture ?? "star.fill")
@@ -19,9 +20,12 @@ struct ProfileScreen: View {
             //                .cornerRadius(25)
             Text("\(pet.type!)")
             Text("\(pet.name!)")
-//*******************************************************************
-            Text("\(pet.toHealth?.doc ?? "no data")")
-//*******************************************************************
+            if (pet.toHealth != nil){
+                Text("\(pet.toHealth!.doc ?? "no data")")
+            }
+            Button("add note") {
+                saveNotes()
+            }
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -38,6 +42,12 @@ struct ProfileScreen: View {
             presentationMode.wrappedValue.dismiss()
         }
         .padding()
+    }
+    private func saveNotes(){
+        let newNote = Health(context: viewContext)
+        newNote.id = UUID()
+        newNote.doc = "тестовое значение"
+        newNote.toPets = pet
     }
 }
 

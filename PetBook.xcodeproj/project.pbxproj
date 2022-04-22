@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DA23D782812CC9100912A35 /* AddMedicineNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA23D772812CC9100912A35 /* AddMedicineNotes.swift */; };
 		7DA32E72280F3B8E00B3D320 /* PetBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E71280F3B8E00B3D320 /* PetBookApp.swift */; };
 		7DA32E74280F3B8E00B3D320 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E73280F3B8E00B3D320 /* ContentView.swift */; };
 		7DA32E76280F3B8F00B3D320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA32E75280F3B8F00B3D320 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7DA23D772812CC9100912A35 /* AddMedicineNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineNotes.swift; sourceTree = "<group>"; };
 		7DA32E6E280F3B8E00B3D320 /* PetBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA32E71280F3B8E00B3D320 /* PetBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBookApp.swift; sourceTree = "<group>"; };
 		7DA32E73280F3B8E00B3D320 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				7DA32E8A280F45B700B3D320 /* NewProfileScreen.swift */,
 				7DA32E88280F421000B3D320 /* ProfileScreen.swift */,
 				7DA32E8C280F500500B3D320 /* MedicineDataScreen.swift */,
+				7DA23D772812CC9100912A35 /* AddMedicineNotes.swift */,
 			);
 			path = PetBook;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				7DA32E8D280F500500B3D320 /* MedicineDataScreen.swift in Sources */,
 				7DA32E87280F417600B3D320 /* HomeScreen.swift in Sources */,
 				7DA32E7B280F3B8F00B3D320 /* Persistence.swift in Sources */,
+				7DA23D782812CC9100912A35 /* AddMedicineNotes.swift in Sources */,
 				7DA32E74280F3B8E00B3D320 /* ContentView.swift in Sources */,
 				7DA32E72280F3B8E00B3D320 /* PetBookApp.swift in Sources */,
 			);

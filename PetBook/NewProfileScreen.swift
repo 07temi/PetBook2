@@ -36,6 +36,7 @@ struct NewProfileScreen: View {
     
     private func addItem() {
         let newItem = Pets(context: viewContext)
+        newItem.id = UUID()
         newItem.name = name
         newItem.type = type
         newItem.toHealth?.setValue(doc, forKey: "doc")
