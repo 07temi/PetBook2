@@ -14,17 +14,24 @@ struct ProfileScreen: View {
     private var notesArray: [Notes] {
         let set = selectedPet.petsToNotes as? Set<Notes> ?? []
         return set.sorted {
+            //тут надо отфильтровать по активности вместо сортировки
             $0.date ?? Date() < $1.date ?? Date()
         }
     }
     var body: some View {
         VStack {
             Text("\(selectedPet.type!)")
+            
             List {
                 ForEach(notesArray) {
-                    note in
-                    RowNotes()
-                    Text("\(note.title ?? "no title")")
+                    note in HStack{
+                        Spacer()
+                        RowNotes(title: note.title ?? "",
+                                 date: note.date?.formatted(date: .long, time: .omitted) ?? "", //формат говно, переделать
+                                 isComplete: note.isComplete
+                        )
+                        Spacer()
+                    }
                 }
             }
             .listStyle(.plain)

@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7D31D1542816F33700DF78E2 /* RowNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowNotes.swift; sourceTree = "<group>"; };
+		7D31D1542816F33700DF78E2 /* RowNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowNotes.swift; sourceTree = "<group>"; usesTabs = 0; };
 		7DA23D772812CC9100912A35 /* AddMedicineNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineNotes.swift; sourceTree = "<group>"; };
 		7DA32E6E280F3B8E00B3D320 /* PetBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA32E71280F3B8E00B3D320 /* PetBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBookApp.swift; sourceTree = "<group>"; };

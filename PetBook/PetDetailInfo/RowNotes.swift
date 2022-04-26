@@ -9,31 +9,40 @@ import SwiftUI
 
 struct RowNotes: View {
     //передать переменные
+    let title: String
+    let date: String
+    @State var isComplete: Bool
+    
     var body: some View {
         HStack {
-            VStack {
-            Text("Title")
-            Text("Date here")
+            VStack(alignment: .leading) {
+            Text(title)
+                    .font(.body)
+            Text("\(date)")
                     .font(.footnote)
-            }
+            }.padding(6)
             Spacer()
-            Image(systemName: "bell.fill")
+            Image(systemName: "bell.square")
                 .resizable()
                 .frame(width: 25, height: 25)
-                .foregroundColor(.gray)
-            Image(systemName: "checkmark")
+                .foregroundColor(isComplete ? .gray : .green)
+                .onTapGesture {
+                    isComplete.toggle()
+                }
+            Image(systemName: "checkmark.square")
                 .resizable()
                 .frame(width: 25, height: 25)
                 .foregroundColor(.gray)
         }
+        .padding(8)
         .frame(width: 250, height: 50)
-        .background(Color(.green))
+        .background(Color(red: 0.5000, green: 0.6580, blue: 0.8589))
         .cornerRadius(10)
     }
 }
 
 struct RowNotes_Previews: PreviewProvider {
     static var previews: some View {
-        RowNotes()
+        RowNotes(title: "Title", date: "Date", isComplete: true)
     }
 }
