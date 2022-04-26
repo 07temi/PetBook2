@@ -6,15 +6,27 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="toPets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pets" inverseName="toHealth" inverseEntity="Pets"/>
     </entity>
+    <entity name="Notes" representedClassName="Notes" syncable="YES" codeGenerationType="class">
+        <attribute name="alarm" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionNote" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isComplete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="notesToPets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pets" inverseName="petsToNotes" inverseEntity="Pets"/>
+    </entity>
     <entity name="Pets" representedClassName="Pets" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="picture" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="petsToNotes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" inverseName="notesToPets" inverseEntity="Notes"/>
         <relationship name="toHealth" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Health" inverseName="toPets" inverseEntity="Health"/>
     </entity>
     <elements>
-        <element name="Health" positionX="-55.76007080078125" positionY="-142.636474609375" width="128" height="103"/>
-        <element name="Pets" positionX="-235.358154296875" positionY="-23.67391967773438" width="128" height="118"/>
+        <element name="Health" positionX="-79.0986328125" positionY="-129.5436096191406" width="128" height="103"/>
+        <element name="Pets" positionX="-322.8894653320312" positionY="0.355133056640625" width="128" height="133"/>
+        <element name="Notes" positionX="-41.786865234375" positionY="-314.6361389160156" width="128" height="163"/>
     </elements>
 </model>

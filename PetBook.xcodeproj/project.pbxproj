@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D31D1552816F33700DF78E2 /* RowNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D31D1542816F33700DF78E2 /* RowNotes.swift */; };
 		7DA23D782812CC9100912A35 /* AddMedicineNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA23D772812CC9100912A35 /* AddMedicineNotes.swift */; };
 		7DA32E72280F3B8E00B3D320 /* PetBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E71280F3B8E00B3D320 /* PetBookApp.swift */; };
 		7DA32E74280F3B8E00B3D320 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E73280F3B8E00B3D320 /* ContentView.swift */; };
@@ -16,11 +17,11 @@
 		7DA32E7E280F3B8F00B3D320 /* PetBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E7C280F3B8F00B3D320 /* PetBook.xcdatamodeld */; };
 		7DA32E87280F417600B3D320 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E86280F417600B3D320 /* HomeScreen.swift */; };
 		7DA32E89280F421000B3D320 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E88280F421000B3D320 /* ProfileScreen.swift */; };
-		7DA32E8B280F45B700B3D320 /* NewProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E8A280F45B700B3D320 /* NewProfileScreen.swift */; };
-		7DA32E8D280F500500B3D320 /* MedicineDataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E8C280F500500B3D320 /* MedicineDataScreen.swift */; };
+		7DA32E8B280F45B700B3D320 /* AddNewProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E8A280F45B700B3D320 /* AddNewProfileScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D31D1542816F33700DF78E2 /* RowNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowNotes.swift; sourceTree = "<group>"; };
 		7DA23D772812CC9100912A35 /* AddMedicineNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineNotes.swift; sourceTree = "<group>"; };
 		7DA32E6E280F3B8E00B3D320 /* PetBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA32E71280F3B8E00B3D320 /* PetBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBookApp.swift; sourceTree = "<group>"; };
@@ -31,8 +32,7 @@
 		7DA32E7D280F3B8F00B3D320 /* PetBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetBook.xcdatamodel; sourceTree = "<group>"; };
 		7DA32E86280F417600B3D320 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		7DA32E88280F421000B3D320 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
-		7DA32E8A280F45B700B3D320 /* NewProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileScreen.swift; sourceTree = "<group>"; };
-		7DA32E8C280F500500B3D320 /* MedicineDataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDataScreen.swift; sourceTree = "<group>"; };
+		7DA32E8A280F45B700B3D320 /* AddNewProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProfileScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D31D1532816F30C00DF78E2 /* PetDetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7DA32E88280F421000B3D320 /* ProfileScreen.swift */,
+				7D31D1542816F33700DF78E2 /* RowNotes.swift */,
+			);
+			path = PetDetailInfo;
+			sourceTree = "<group>";
+		};
 		7DA32E65280F3B8E00B3D320 = {
 			isa = PBXGroup;
 			children = (
@@ -72,9 +81,8 @@
 				7DA32E7C280F3B8F00B3D320 /* PetBook.xcdatamodeld */,
 				7DA32E77280F3B8F00B3D320 /* Preview Content */,
 				7DA32E86280F417600B3D320 /* HomeScreen.swift */,
-				7DA32E8A280F45B700B3D320 /* NewProfileScreen.swift */,
-				7DA32E88280F421000B3D320 /* ProfileScreen.swift */,
-				7DA32E8C280F500500B3D320 /* MedicineDataScreen.swift */,
+				7DA32E8A280F45B700B3D320 /* AddNewProfileScreen.swift */,
+				7D31D1532816F30C00DF78E2 /* PetDetailInfo */,
 				7DA23D772812CC9100912A35 /* AddMedicineNotes.swift */,
 			);
 			path = PetBook;
@@ -159,10 +167,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA32E7E280F3B8F00B3D320 /* PetBook.xcdatamodeld in Sources */,
-				7DA32E8B280F45B700B3D320 /* NewProfileScreen.swift in Sources */,
+				7DA32E8B280F45B700B3D320 /* AddNewProfileScreen.swift in Sources */,
 				7DA32E89280F421000B3D320 /* ProfileScreen.swift in Sources */,
-				7DA32E8D280F500500B3D320 /* MedicineDataScreen.swift in Sources */,
 				7DA32E87280F417600B3D320 /* HomeScreen.swift in Sources */,
+				7D31D1552816F33700DF78E2 /* RowNotes.swift in Sources */,
 				7DA32E7B280F3B8F00B3D320 /* Persistence.swift in Sources */,
 				7DA23D782812CC9100912A35 /* AddMedicineNotes.swift in Sources */,
 				7DA32E74280F3B8E00B3D320 /* ContentView.swift in Sources */,

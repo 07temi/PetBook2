@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct NewProfileScreen: View {
+struct AddNewProfileScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var name = ""
     @State private var type = ""
-    @State private var doc = ""
-    private let types = ["Dog", "Cat"]
+    @State private var birthDate = ""
+    private let types = ["Dog", "Cat", "bird", "fish", "насекошки"]
     
     var body: some View {
         Form {
@@ -24,7 +24,7 @@ struct NewProfileScreen: View {
                         Text(type)
                     }
                 }
-                TextField("Enter doc", text: $doc)
+                TextField("Enter birth date", text: $birthDate)
                     .disableAutocorrection(true)
             }
 
@@ -39,7 +39,7 @@ struct NewProfileScreen: View {
         newItem.id = UUID()
         newItem.name = name
         newItem.type = type
-        newItem.toHealth?.setValue(doc, forKey: "doc")
+        newItem.toHealth?.setValue(birthDate, forKey: "doc")
         newItem.picture = "james"
         
         do {
@@ -53,6 +53,6 @@ struct NewProfileScreen: View {
 
 struct NewProfileScreen_Previews: PreviewProvider {
     static var previews: some View {
-        NewProfileScreen()
+        AddNewProfileScreen()
     }
 }

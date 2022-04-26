@@ -23,7 +23,7 @@ struct HomeScreen: View {
                         //NavigationLink(destination: PillsAdd(pet: pet)) {
                         //    Text("PILLS")
                         // }
-                        NavigationLink(destination: ProfileScreen(pet: pet)) {
+                        NavigationLink(destination: ProfileScreen(selectedPet: pet)) {
                             Image(pet.picture ?? "star.fill")
                                 .resizable()
                                 .scaledToFill()
@@ -40,7 +40,7 @@ struct HomeScreen: View {
                 }
                 VStack {
                     NavigationLink("Add new") {
-                        NewProfileScreen()
+                        AddNewProfileScreen()
                     }
                     Text("add")
                     //Button("add", action: {addItem()} )
