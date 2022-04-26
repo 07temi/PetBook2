@@ -11,6 +11,7 @@ struct RowNotes: View {
     //передать переменные
     let title: String
     let date: String
+    @State var alarm: Bool
     @State var isComplete: Bool
     
     var body: some View {
@@ -25,14 +26,17 @@ struct RowNotes: View {
             Image(systemName: "bell.square")
                 .resizable()
                 .frame(width: 25, height: 25)
-                .foregroundColor(isComplete ? .gray : .green)
+                .foregroundColor(alarm ? .green : .gray)
                 .onTapGesture {
-                    isComplete.toggle()
+                    alarm.toggle()
                 }
             Image(systemName: "checkmark.square")
                 .resizable()
                 .frame(width: 25, height: 25)
-                .foregroundColor(.gray)
+                .foregroundColor(isComplete ? .gray : .green)
+                .onTapGesture {
+                    isComplete.toggle()
+                }
         }
         .padding(8)
         .frame(width: 250, height: 50)
@@ -43,6 +47,6 @@ struct RowNotes: View {
 
 struct RowNotes_Previews: PreviewProvider {
     static var previews: some View {
-        RowNotes(title: "Title", date: "Date", isComplete: true)
+        RowNotes(title: "Title", date: "Date", alarm: true, isComplete: false )
     }
 }

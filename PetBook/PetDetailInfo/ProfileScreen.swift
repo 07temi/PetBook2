@@ -21,15 +21,14 @@ struct ProfileScreen: View {
     var body: some View {
         VStack {
             Text("\(selectedPet.type!)")
-            
             List {
                 ForEach(notesArray) {
                     note in HStack{
                         Spacer()
                         RowNotes(title: note.title ?? "",
                                  date: note.date?.formatted(date: .long, time: .omitted) ?? "", //формат говно, переделать
-                                 isComplete: note.isComplete
-                        )
+                                 alarm: note.alarm, 
+                                 isComplete: note.isComplete)
                         Spacer()
                     }
                 }
