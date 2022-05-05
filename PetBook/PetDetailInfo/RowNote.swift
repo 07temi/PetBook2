@@ -1,0 +1,50 @@
+//
+//  RowNote.swift
+//  PetBook
+//
+//  Created by Артем Черненко on 05.05.2022.
+//
+
+import SwiftUI
+
+struct RowNote: View {
+    let note: Notes
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(note.title ?? "no title")
+                    .font(.body)
+                Text("\(note.date?.formatted(date: .long, time: .omitted) ?? "")")
+                    .font(.footnote)
+            }.padding(6)
+            Spacer()
+            Image(systemName: "bell.square")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(note.alarm ? .green : .gray)
+                .onTapGesture {
+                    note.alarm.toggle()
+                    
+                }
+            Image(systemName: "checkmark.square")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(note.isComplete ? .gray : .green)
+                .onTapGesture {
+                    note.isComplete.toggle()
+                }
+        }
+        .padding(8)
+        .frame(width: 250, height: 50)
+        .background(Color(red: 0.6000, green: 0.7580, blue: 0.9589))
+//        (Color(red: 0.5000, green: 0.6580, blue: 0.8589))
+        .cornerRadius(10)
+    }
+
+}
+
+//struct RowNote_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RowNote()
+//    }
+//}

@@ -25,10 +25,11 @@ struct ProfileScreen: View {
                 ForEach(notesArray) {
                     note in HStack{
                         Spacer()
-                        RowNotes(title: note.title ?? "",
-                                 date: note.date?.formatted(date: .long, time: .omitted) ?? "", //формат говно, переделать
-                                 alarm: note.alarm, 
-                                 isComplete: note.isComplete)
+                        RowNote(note: note)
+//                        RowNotes(title: note.title ?? "",
+//                                 date: note.date?.formatted(date: .long, time: .omitted) ?? "", //формат говно, переделать
+//                                 alarm: note.alarm,
+//                                 isComplete: note.isComplete)
                         Spacer()
                     }
                 }
@@ -42,9 +43,9 @@ struct ProfileScreen: View {
             // Переход на экран 3
             //  -- Спорт/занятия с тренером
             // Переход на экран 4
-            if (selectedPet.toHealth != nil){
-                Text("\(selectedPet.toHealth!.doc ?? "no data")")
-            }
+//            if (selectedPet.toHealth != nil){
+//                Text("\(selectedPet.toHealth!.doc ?? "no data")")
+//            }
             //Button("add note") {
             NavigationLink(destination: AddMedicineNotes(selectedProfile: selectedPet)) {
                 Text("AddNotes")
@@ -69,7 +70,7 @@ struct ProfileScreen: View {
         
         .navigationBarBackButtonHidden(true)
         Spacer()
-        Button("Save") {
+        Button("Back") {
             presentationMode.wrappedValue.dismiss()
         }
         .padding()
