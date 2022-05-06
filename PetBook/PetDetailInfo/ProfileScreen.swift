@@ -14,9 +14,12 @@ struct ProfileScreen: View {
     private var notesArray: [Notes] {
         let set = selectedPet.petsToNotes as? Set<Notes> ?? []
         return set.sorted {
-            //тут надо отфильтровать по активности вместо сортировки
             $0.date ?? Date() < $1.date ?? Date()
         }
+//        let filterd = sorted.filter{
+//            sort in return sort.isComplete == true
+//        }
+//        return filterd
     }
     var body: some View {
         //VStack {
@@ -34,12 +37,13 @@ struct ProfileScreen: View {
                         Spacer()
                     }
                 }
+                .onDelete(perform: deleteNote)
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
 
             NavigationLink(destination: AddMedicineNotes(selectedProfile: selectedPet)) {
-                Text("AddNotes")
+                Text("Добавить заметку")
             }
             //    saveNotes()
                 
@@ -67,12 +71,24 @@ struct ProfileScreen: View {
         .padding()
     }
     
-    private func saveNotes(){
-        let newNote = Health(context: viewContext)
-        newNote.id = UUID()
-        newNote.doc = "тестовое значение"
-        newNote.toPets = selectedPet
+    private func deleteNote(at offsets: IndexSet) {
+        for index in offsets {
+            let note = notesArray[index]
+            viewContext.delete(note)
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            
+        }
     }
+    
+//    private func saveNotes(){
+//        let newNote = Health(context: viewContext)
+//        newNote.id = UUID()
+//        newNote.doc = "тестовое значение"
+//        newNote.toPets = selectedPet
+//    }
 }
 
 
