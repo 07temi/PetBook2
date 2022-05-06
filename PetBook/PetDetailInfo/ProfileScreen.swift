@@ -19,13 +19,14 @@ struct ProfileScreen: View {
         }
     }
     var body: some View {
-        VStack {
-            Text("\(selectedPet.type!)")
+        //VStack {
             List {
                 ForEach(notesArray) {
                     note in HStack{
                         Spacer()
-                        RowNote(note: note)
+                        RowNote(note: note,
+                                alarmState: note.alarm,
+                                completeState: note.isComplete)
 //                        RowNotes(title: note.title ?? "",
 //                                 date: note.date?.formatted(date: .long, time: .omitted) ?? "", //формат говно, переделать
 //                                 alarm: note.alarm,
@@ -33,27 +34,17 @@ struct ProfileScreen: View {
                         Spacer()
                     }
                 }
+                .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            //Здесь ссылки на основные функции
-            // Переход на экран 1
-            //  -- Визит к доктору
-            // Переход на экран 2
-            //  -- Уход
-            // Переход на экран 3
-            //  -- Спорт/занятия с тренером
-            // Переход на экран 4
-//            if (selectedPet.toHealth != nil){
-//                Text("\(selectedPet.toHealth!.doc ?? "no data")")
-//            }
-            //Button("add note") {
+
             NavigationLink(destination: AddMedicineNotes(selectedProfile: selectedPet)) {
                 Text("AddNotes")
             }
             //    saveNotes()
                 
             //}
-        }
+       // }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 HStack{
