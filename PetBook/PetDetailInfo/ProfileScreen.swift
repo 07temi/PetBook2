@@ -9,38 +9,87 @@ import SwiftUI
 
 struct ProfileScreen: View {
     let selectedPet: Pets
+    @State private var tags = 0
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
+    
+    
     private var notesArray: [Notes] {
         let set = selectedPet.petsToNotes as? Set<Notes> ?? []
         return set.sorted {
             $0.date ?? Date() < $1.date ?? Date()
         }
-//        let filterd = sorted.filter{
-//            sort in return sort.isComplete == true
-//        }
-//        return filterd
     }
+    
+    private var activeNotes: [Notes] {
+        let set = selectedPet.petsToNotes as? Set<Notes> ?? []
+        return set.filter {
+            sort in return sort.isComplete == false
+        }
+    }
+        
     var body: some View {
         //VStack {
+        Picker("Filter array",selection: $tags){
+            Text("Active").tag(0)
+            Text("Inactive").tag(1)
+        }
+        .pickerStyle(.segmented)
+        
+        if tags == 0 {
+            let filtered = notesArray.filter { note in
+                return note.isComplete == false
+            }
             List {
-                ForEach(notesArray) {
-                    note in HStack{
+                ForEach(filtered) {
+                note in HStack{
                         Spacer()
                         RowNote(note: note,
                                 alarmState: note.alarm,
                                 completeState: note.isComplete)
-//                        RowNotes(title: note.title ?? "",
-//                                 date: note.date?.formatted(date: .long, time: .omitted) ?? "", //формат говно, переделать
-//                                 alarm: note.alarm,
-//                                 isComplete: note.isComplete)
                         Spacer()
                     }
                 }
-                .onDelete(perform: deleteNote)
+//                .onDelete(perform: deleteNote)
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
+        }
+        
+        if tags == 1 {
+            let filtered = notesArray.filter { note in
+                return note.isComplete == true
+            }
+            List {
+                ForEach(filtered) {
+                note in HStack{
+                        Spacer()
+                        RowNote(note: note,
+                                alarmState: note.alarm,
+                                completeState: note.isComplete)
+                        Spacer()
+                    }
+                }
+//                .onDelete(perform: deleteNote)
+                .listRowSeparator(.hidden)
+            }
+            .listStyle(.plain)
+        }
+        
+//            List {
+//                ForEach(notesArray) {
+//                note in HStack{
+//                        Spacer()
+//                        RowNote(note: note,
+//                                alarmState: note.alarm,
+//                                completeState: note.isComplete)
+//                        Spacer()
+//                    }
+//                }
+////                .onDelete(perform: deleteNote)
+//                .listRowSeparator(.hidden)
+//            }
+//            .listStyle(.plain)
 
             NavigationLink(destination: AddMedicineNotes(selectedProfile: selectedPet)) {
                 Text("Добавить заметку")
@@ -71,17 +120,17 @@ struct ProfileScreen: View {
         .padding()
     }
     
-    private func deleteNote(at offsets: IndexSet) {
-        for index in offsets {
-            let note = notesArray[index]
-            viewContext.delete(note)
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            
-        }
-    }
+//    private func deleteNote(at offsets: IndexSet) {
+//        for index in offsets {
+//            let note = notesArray[index]
+//            viewContext.delete(note)
+//        }
+//        do {
+//            try viewContext.save()
+//        } catch {
+//
+//        }
+//    }
     
 //    private func saveNotes(){
 //        let newNote = Health(context: viewContext)

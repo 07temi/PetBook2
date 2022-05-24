@@ -18,10 +18,14 @@ struct RowNote: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(note.title ?? "no title")
-                    .font(.body)
+                if let title = note.title {
+                    Text(title)
+                        .font(.body)
+                }
+                //Text(note.title ?? "no title")
+                //    .font(.body)
                 Text("\(note.date?.formatted(date: .long, time: .omitted) ?? "")")
-                    .font(.footnote)
+                   .font(.footnote)
             }.padding(6)
             Spacer()
             Image(systemName: "bell.square")
