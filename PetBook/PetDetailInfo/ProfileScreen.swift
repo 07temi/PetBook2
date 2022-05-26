@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ProfileScreen: View {
-    let selectedPet: Pets
+    //let selectedPet: Pets
+    @State var selectedPet: Pets
     @State private var tags = 0
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Environment(\.managedObjectContext) private var viewContext
+    //@FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var students: FetchedResults<Notes>
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    //@Environment(\.managedObjectContext) private var viewContext
     
     private var notesArray: [Notes] {
         let set = selectedPet.petsToNotes as? Set<Notes> ?? []
@@ -37,6 +39,7 @@ struct ProfileScreen: View {
         .pickerStyle(.segmented)
         
         if tags == 0 {
+            
             let filtered = notesArray.filter { note in
                 return note.isComplete == false
             }
@@ -44,9 +47,9 @@ struct ProfileScreen: View {
                 ForEach(filtered) {
                 note in HStack{
                         Spacer()
-                        RowNote(note: note,
-                                alarmState: note.alarm,
-                                completeState: note.isComplete)
+                    RowNote(note: note,
+                            alarmState: note.alarm,
+                            completeState: note.isComplete)
                         Spacer()
                     }
                 }
@@ -64,7 +67,7 @@ struct ProfileScreen: View {
                 ForEach(filtered) {
                 note in HStack{
                         Spacer()
-                        RowNote(note: note,
+                    RowNote(note: note,
                                 alarmState: note.alarm,
                                 completeState: note.isComplete)
                         Spacer()
@@ -77,7 +80,7 @@ struct ProfileScreen: View {
         }
         
 //            List {
-//                ForEach(notesArray) {
+//                ForEach(students) {
 //                note in HStack{
 //                        Spacer()
 //                        RowNote(note: note,

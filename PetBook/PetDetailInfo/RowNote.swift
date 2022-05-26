@@ -10,9 +10,11 @@ import SwiftUI
 struct RowNote: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    let note: Notes
+//    let note: Notes
+    
+    @State var note: Notes
 
-    @State var alarmState: Bool
+    @State var alarmState = false
     @State var completeState: Bool
     
     var body: some View {
@@ -31,7 +33,7 @@ struct RowNote: View {
             Image(systemName: "bell.square")
                 .resizable()
                 .frame(width: 25, height: 25)
-                .foregroundColor(alarmState ? .green : .gray)
+                .foregroundColor(note.alarm ? .green : .gray)
                 .onTapGesture {
                     note.alarm.toggle()
                     alarmState = note.alarm

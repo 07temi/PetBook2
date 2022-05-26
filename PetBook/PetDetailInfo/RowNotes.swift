@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RowNotes: View {
-    //передать переменные
     let title: String
     let date: String
     @State var alarm: Bool
