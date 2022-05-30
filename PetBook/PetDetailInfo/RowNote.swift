@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct RowNote: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
 //    let note: Notes
     
     @State var note: Notes
@@ -37,7 +35,7 @@ struct RowNote: View {
                 .onTapGesture {
                     note.alarm.toggle()
                     alarmState = note.alarm
-                    saveState()
+                    //HomeScreen().saveDataTest()
                 }
             Image(systemName: "checkmark.square")
                 .resizable()
@@ -46,7 +44,6 @@ struct RowNote: View {
                 .onTapGesture {
                     note.isComplete.toggle()
                     completeState = note.isComplete
-                    saveState()
                 }
         }
         .padding(8)
@@ -55,16 +52,6 @@ struct RowNote: View {
 //        (Color(red: 0.5000, green: 0.6580, blue: 0.8589))
         .cornerRadius(10)
     }
-    
-    private func saveState() {
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Fatal error \(nsError), \(nsError.userInfo)")
-        }
-    }
-
 }
 
 //struct RowNote_Previews: PreviewProvider {

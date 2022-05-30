@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileScreen: View {
+    @Environment(\.managedObjectContext) private var viewContext
     //let selectedPet: Pets
     @State var selectedPet: Pets
     @State private var tags = 0
@@ -65,9 +66,9 @@ struct ProfileScreen: View {
             }
             List {
                 ForEach(filtered) {
-                note in HStack{
+                    note in HStack{
                         Spacer()
-                    RowNote(note: note,
+                        RowNote(note: note,
                                 alarmState: note.alarm,
                                 completeState: note.isComplete)
                         Spacer()
@@ -141,6 +142,14 @@ struct ProfileScreen: View {
 //        newNote.doc = "тестовое значение"
 //        newNote.toPets = selectedPet
 //    }
+    private func saveState() {
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Fatal error \(nsError), \(nsError.userInfo)")
+        }
+    }
 }
 
 

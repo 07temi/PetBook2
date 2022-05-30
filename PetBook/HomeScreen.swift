@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Pets.name, ascending: true)],
         animation: .default)

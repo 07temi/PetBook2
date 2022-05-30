@@ -19,6 +19,7 @@
 		7DA32E87280F417600B3D320 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E86280F417600B3D320 /* HomeScreen.swift */; };
 		7DA32E89280F421000B3D320 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E88280F421000B3D320 /* ProfileScreen.swift */; };
 		7DA32E8B280F45B700B3D320 /* AddNewProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E8A280F45B700B3D320 /* AddNewProfileScreen.swift */; };
+		7DD6FE5F28449C3B00D44C13 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6FE5E28449C3B00D44C13 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		7DA32E86280F417600B3D320 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		7DA32E88280F421000B3D320 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		7DA32E8A280F45B700B3D320 /* AddNewProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProfileScreen.swift; sourceTree = "<group>"; };
+		7DD6FE5E28449C3B00D44C13 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		7DA32E70280F3B8E00B3D320 /* PetBook */ = {
 			isa = PBXGroup;
 			children = (
+				7DD6FE5E28449C3B00D44C13 /* StorageManager.swift */,
 				7DA32E71280F3B8E00B3D320 /* PetBookApp.swift */,
 				7DA32E73280F3B8E00B3D320 /* ContentView.swift */,
 				7DA32E75280F3B8F00B3D320 /* Assets.xcassets */,
@@ -171,6 +174,7 @@
 			files = (
 				7DA2659F282403300027A3CF /* RowNote.swift in Sources */,
 				7DA32E7E280F3B8F00B3D320 /* PetBook.xcdatamodeld in Sources */,
+				7DD6FE5F28449C3B00D44C13 /* StorageManager.swift in Sources */,
 				7DA32E8B280F45B700B3D320 /* AddNewProfileScreen.swift in Sources */,
 				7DA32E89280F421000B3D320 /* ProfileScreen.swift in Sources */,
 				7DA32E87280F417600B3D320 /* HomeScreen.swift in Sources */,

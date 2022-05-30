@@ -9,12 +9,18 @@ import SwiftUI
 
 @main
 struct PetBookApp: App {
-    let persistenceController = PersistenceController.shared
+    
+    @StateObject private var storageManager = StorageManager()
+    //let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             HomeScreen()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, storageManager.container.viewContext)
         }
+//        WindowGroup {
+//            HomeScreen()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//        }
     }
 }
