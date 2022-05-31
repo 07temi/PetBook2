@@ -15,11 +15,11 @@
 		7DA32E76280F3B8F00B3D320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA32E75280F3B8F00B3D320 /* Assets.xcassets */; };
 		7DA32E79280F3B8F00B3D320 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA32E78280F3B8F00B3D320 /* Preview Assets.xcassets */; };
 		7DA32E7B280F3B8F00B3D320 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E7A280F3B8F00B3D320 /* Persistence.swift */; };
-		7DA32E7E280F3B8F00B3D320 /* PetBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E7C280F3B8F00B3D320 /* PetBook.xcdatamodeld */; };
 		7DA32E87280F417600B3D320 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E86280F417600B3D320 /* HomeScreen.swift */; };
 		7DA32E89280F421000B3D320 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E88280F421000B3D320 /* ProfileScreen.swift */; };
 		7DA32E8B280F45B700B3D320 /* AddNewProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA32E8A280F45B700B3D320 /* AddNewProfileScreen.swift */; };
 		7DD6FE5F28449C3B00D44C13 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6FE5E28449C3B00D44C13 /* StorageManager.swift */; };
+		7DD6FE622846509F00D44C13 /* PetBook2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6FE602846509F00D44C13 /* PetBook2.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,11 +32,11 @@
 		7DA32E75280F3B8F00B3D320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA32E78280F3B8F00B3D320 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7DA32E7A280F3B8F00B3D320 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		7DA32E7D280F3B8F00B3D320 /* PetBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetBook.xcdatamodel; sourceTree = "<group>"; };
 		7DA32E86280F417600B3D320 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		7DA32E88280F421000B3D320 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		7DA32E8A280F45B700B3D320 /* AddNewProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProfileScreen.swift; sourceTree = "<group>"; };
 		7DD6FE5E28449C3B00D44C13 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		7DD6FE612846509F00D44C13 /* PetBook2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetBook2.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +84,12 @@
 				7DA32E73280F3B8E00B3D320 /* ContentView.swift */,
 				7DA32E75280F3B8F00B3D320 /* Assets.xcassets */,
 				7DA32E7A280F3B8F00B3D320 /* Persistence.swift */,
-				7DA32E7C280F3B8F00B3D320 /* PetBook.xcdatamodeld */,
 				7DA32E77280F3B8F00B3D320 /* Preview Content */,
 				7DA32E86280F417600B3D320 /* HomeScreen.swift */,
 				7DA32E8A280F45B700B3D320 /* AddNewProfileScreen.swift */,
 				7D31D1532816F30C00DF78E2 /* PetDetailInfo */,
 				7DA23D772812CC9100912A35 /* AddMedicineNotes.swift */,
+				7DD6FE602846509F00D44C13 /* PetBook2.xcdatamodeld */,
 			);
 			path = PetBook;
 			sourceTree = "<group>";
@@ -173,11 +173,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA2659F282403300027A3CF /* RowNote.swift in Sources */,
-				7DA32E7E280F3B8F00B3D320 /* PetBook.xcdatamodeld in Sources */,
 				7DD6FE5F28449C3B00D44C13 /* StorageManager.swift in Sources */,
 				7DA32E8B280F45B700B3D320 /* AddNewProfileScreen.swift in Sources */,
 				7DA32E89280F421000B3D320 /* ProfileScreen.swift in Sources */,
 				7DA32E87280F417600B3D320 /* HomeScreen.swift in Sources */,
+				7DD6FE622846509F00D44C13 /* PetBook2.xcdatamodeld in Sources */,
 				7D31D1552816F33700DF78E2 /* RowNotes.swift in Sources */,
 				7DA32E7B280F3B8F00B3D320 /* Persistence.swift in Sources */,
 				7DA23D782812CC9100912A35 /* AddMedicineNotes.swift in Sources */,
@@ -389,13 +389,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7DA32E7C280F3B8F00B3D320 /* PetBook.xcdatamodeld */ = {
+		7DD6FE602846509F00D44C13 /* PetBook2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7DA32E7D280F3B8F00B3D320 /* PetBook.xcdatamodel */,
+				7DD6FE612846509F00D44C13 /* PetBook2.xcdatamodel */,
 			);
-			currentVersion = 7DA32E7D280F3B8F00B3D320 /* PetBook.xcdatamodel */;
-			path = PetBook.xcdatamodeld;
+			currentVersion = 7DD6FE612846509F00D44C13 /* PetBook2.xcdatamodel */;
+			path = PetBook2.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

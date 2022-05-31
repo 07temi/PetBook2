@@ -12,10 +12,10 @@ struct ProfileScreen: View {
     //let selectedPet: Pets
     @State var selectedPet: Pets
     @State private var tags = 0
+    @State var filteredTest: [Notes] = []
     //@FetchRequest(sortDescriptors: [SortDescriptor(\.date)]) var students: FetchedResults<Notes>
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    //@Environment(\.managedObjectContext) private var viewContext
     
     private var notesArray: [Notes] {
         let set = selectedPet.petsToNotes as? Set<Notes> ?? []
@@ -40,33 +40,30 @@ struct ProfileScreen: View {
         .pickerStyle(.segmented)
         
         if tags == 0 {
-            
-            let filtered = notesArray.filter { note in
-                return note.isComplete == false
-            }
-            List {
-                ForEach(filtered) {
-                note in HStack{
-                        Spacer()
-                    RowNote(note: note,
-                            alarmState: note.alarm,
-                            completeState: note.isComplete)
-                        Spacer()
-                    }
+            //let filteredNotes = notesArray.filter { note in
+            //Здесь надо отфильтровать массив
+            filteredTest
+            List ($filteredTest) {
+                //ForEach(filtered) {
+                $note in HStack{
+                    Spacer()
+                    RowNote(note: $note, alarmState: note.alarm, completeState: note.isComplete)
+                    Spacer()
                 }
-//                .onDelete(perform: deleteNote)
+                //}
+                //                .onDelete(perform: deleteNote)
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
         }
         
         if tags == 1 {
-            let filtered = notesArray.filter { note in
+            let filteredNotes = notesArray.filter { note in
                 return note.isComplete == true
             }
             List {
-                ForEach(filtered) {
-                    note in HStack{
+                ForEach(filteredNotes) {note in
+                    HStack {
                         Spacer()
                         RowNote(note: note,
                                 alarmState: note.alarm,

@@ -10,9 +10,10 @@ import SwiftUI
 struct RowNote: View {
 //    let note: Notes
     
-    @State var note: Notes
+    //@State var note: Notes
+    @Binding var note: Notes
 
-    @State var alarmState = false
+    @State var alarmState: Bool
     @State var completeState: Bool
     
     var body: some View {

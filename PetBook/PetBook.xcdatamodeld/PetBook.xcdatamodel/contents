@@ -26,7 +26,7 @@
     </entity>
     <elements>
         <element name="Health" positionX="-79.0986328125" positionY="-129.5436096191406" width="128" height="103"/>
-        <element name="Pets" positionX="-322.8894653320312" positionY="0.355133056640625" width="128" height="133"/>
         <element name="Notes" positionX="-41.786865234375" positionY="-314.6361389160156" width="128" height="163"/>
+        <element name="Pets" positionX="-322.8894653320312" positionY="0.355133056640625" width="128" height="133"/>
     </elements>
 </model>
